@@ -1,0 +1,70 @@
+// washing machine
+#include <stdio.h>
+int main() {
+printf("Washing Machine Simulation\n");
+// Simplified cycle control
+printf("Filling water...\n");
+// Simulate timer
+for(int i=0; i<5; i++) { /* delay */ }
+printf("Washing...\n");
+// Add motor/sensor logic here
+printf("Cycle complete.\n");
+return 0;
+
+// elevator
+#include <stdio.h>
+struct Elevator { int current_floor; };
+void move_to(struct Elevator* e, int target) {
+printf("Moving from %d to %d\n"
+
+, e->current_floor, target);
+
+e->current_floor = target;
+printf("Doors open on floor %d\n"
+
+, target);
+
+}
+int main() {
+struct Elevator elev = {0};
+move_to(&elev, 5);
+return 0;
+}
+
+// traffic signal
+#include <stdio.h>
+#include <unistd.h> // For sleep
+int main() {
+while(1) {
+printf("Green Light\n");
+sleep(30);
+printf("Yellow Light\n");
+sleep(5);
+printf("Red Light\n");
+sleep(30);
+}
+return 0;
+}
+
+// ATM
+#include <stdio.h>
+int main() {
+int choice, balance = 1000;
+printf("1. Balance\n");
+scanf("%d", &choice);
+if(choice == 1) printf("Balance: %d\n"
+
+, balance);
+
+return 0;
+
+// AIR BAG
+#include <stdio.h>
+int main() {
+int accel = 0; // Simulated sensor
+scanf("%d", &accel);
+if(accel > 25) { // Threshold g-force
+printf("Airbag Deployed!\n");
+}
+return 0;
+}
